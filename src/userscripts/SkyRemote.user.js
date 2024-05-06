@@ -141,6 +141,7 @@ SkyRemoteAPI.triggerEvent = function (event, options, element = document, destin
 	}
 	const eventParams = [event, options];
 	if (destination) {
+		// eslint-disable-next-line no-global-assign
 		if (typeof destination !== "string") origin = "https://denki.co.uk";
 		if (!(element instanceof Window)) element = window.frames[0];
 		element.postMessage(eventParams, origin);
