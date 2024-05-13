@@ -11,8 +11,11 @@
     defaultPackage.${system} = pkgs.buildNpmPackage {
      name = "sky-games-go";
      src = ./.;
-     npmDepsHash = "sha256-xY9hGV5fyJ7MceSVWlNEUfZ4lrjCfSy91W5pyik09Sc=";
+     npmDepsHash = "sha256-x3VJw3x9B8keLbCAH9aH5i208TxclmnxElkU1I7zlMw=";
     #  dontNpmBuild = true;
+	preBuild = ''
+	npx update-browserslist-db@latest
+	'';
     };
   };
 }
